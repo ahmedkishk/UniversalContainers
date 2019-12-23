@@ -25,7 +25,7 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY_TEST --jwtkeyfile assets/server.key
   --username $USERNAME_TEST -a TestOrg
 script:
-- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait
+- sfdx force:org:create -v TestOrg -s -f config/project-scratch-def.json -a ciorg --wait
   3 --loglevel DEBUG
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
