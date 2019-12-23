@@ -2,10 +2,12 @@ public without sharing class AccountTriggerHandler {
     
     private static void beforeInsert(){        
         AccountService.setRatingBasedOnIndustry(Trigger.New);
+        AccountService.setRatingBasedOnRevenue(Trigger.New);                
     }
 
     private static void beforeUpdate(){        
-        AccountService.setRatingBasedOnIndustry(Trigger.New);
+        AccountService.setRatingBasedOnIndustry(Trigger.New);    
+        AccountService.setRatingBasedOnRevenue(Trigger.New);        
     }
 
     public static void run(){
